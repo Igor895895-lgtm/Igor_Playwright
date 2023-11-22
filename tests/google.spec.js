@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test.describe('Google', () => {
+test.describe('Find Clothing stores', () => {
 
     test('test 1', async ({ page }) => {
     
