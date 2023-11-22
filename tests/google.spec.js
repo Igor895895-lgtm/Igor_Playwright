@@ -4,8 +4,7 @@ test.describe('Google', () => {
 
     test('test 1', async ({ page }) => {
     
-    // await browser.context().setLocale('en-GB');
-    // await browser.context().setTimezoneId('Europe/London');    
+    
     await page.context().setGeolocation({longitude: 52.192001, latitude: -2.220000});    
     await page.goto('https://www.google.com');
     await page.getByRole('button', { name: 'Accept all' }).click();
