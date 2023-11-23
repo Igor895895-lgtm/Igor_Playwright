@@ -4,16 +4,17 @@ test.describe.configure({ mode: 'serial' })
 test.describe('Open Guru website', () => {
 
     test.beforeEach(async({ page }) => {
-        await page.goto ('https://www.guru99.com/')
+        //await page.goto ('https://www.guru99.com/')
+        await page.goto ('/')
     })
     test('Open the main page', async({ page }) =>{ 
-        await page.goto ('https://www.guru99.com/')
+        // await page.goto ('https://www.guru99.com/')
 
         await expect(page.getByText('Tutorials Library')).toBeVisible()
     })
 
 
-test.skip('test', async ({ page }) => {
+test('test', async ({ page }) => {
   await page.goto('https://www.guru99.com/');
   await page.getByRole('link', { name: 'SAP Expand child menu of SAP' }).click();
   await page.getByRole('link', { name: 'CRM', exact: true }).click();
@@ -22,13 +23,13 @@ test.skip('test', async ({ page }) => {
 });
     
 
-test.skip('test2', async ({ page }) => {
+test('test2', async ({ page }) => {
     await page.goto('https://www.guru99.com/');
     await page.locator("xpath=//a[@href='/tensorflow-tutorial.html'][text()='➤ TensorFlow']").click();
     await expect(page.locator('//h2[text()="What is TensorFlow?"]')).toBeVisible()
 })
 
-test.skip('test3', async ({ page }) => {
+test('test3', async ({ page }) => {
     const linkNltk = page.locator('a[href="/nltk-tutorial.html"]')
     const articleAdded = page.locator("xpath=//time")
     const textNltkSylabus = page.locator("xpath=//h2[text()='NLTK Tutorial Syllabus']")
@@ -59,8 +60,11 @@ test.skip('test4', async ({ page }) => {
 test('test5', async ({ page }) => {
     const input = page.locator('input.gsc-input')
     await page.getByText('Guru99 is totally new kind of learning experience. We make tons of efforts to ta').click();
+    await page.locator('div.g-content').screenshot({ path: 'screenshots/screen1.png'})
+    await expect(page).toHaveScreenshot('screenshots-main-page-snapshot.png')
     await input.click()
     await input.fill('sap')
+    await page.screenshot({ path: 'sap_in_search_input_false.png', fullPage: false})
     await input.clear()
     await input.pressSequentially('SAP')
     await input.pressSequentially('Tutorial', { delay: 200})
