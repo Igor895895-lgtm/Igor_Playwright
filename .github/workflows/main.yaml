@@ -11,6 +11,6 @@ jobs:
     - name: Install dependencies
       run: npm i
     - name: browsers
-      run: npx playwright install --with-dpes
+      run: npx playwright install --with-deps
     - name: Run playwright tests
       run: npx playwright test guru.spec.js --project chromium
