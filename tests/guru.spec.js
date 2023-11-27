@@ -20,7 +20,7 @@ test('test', async ({ page }) => {
   await page.mouse.up();
   await page.getByRole('link', { name: 'SAP Expand child menu of SAP' }).click();
   await page.getByRole('link', { name: 'CRM', exact: true }).click();
-  await page.getByRole('button', { name: 'AGREE' }).click();
+  //await page.getByRole('button', { name: 'AGREE' }).click();
   await page.getByTitle('SAP CRM Module: Overview, Architecture').click();
 });
     
