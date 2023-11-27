@@ -1,6 +1,5 @@
 const { test, expect } = require('@playwright/test');
 
-
 test.describe.configure({ mode: 'serial' })
 test.describe('Open Guru website', () => {
 
@@ -64,7 +63,7 @@ test('test50', async ({ page }) => {
     const input = page.locator('input.gsc-input')
     await page.getByText('Guru99 is totally new kind of learning experience. We make tons of efforts to ta').click();
     await page.locator('div.g-content').screenshot({ path: 'screenshots/screen1.png'})
-    await expect(page).toHaveScreenshot('screenshots-main-page-snapshot.png');
+    await expect(page).toHaveScreenshot('screenshots-main-page-snapshot.png')
     await input.click()
     await input.fill('sap')
     await page.screenshot({ path: 'sap_in_search_input_false.png', fullPage: false})
