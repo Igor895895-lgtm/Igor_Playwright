@@ -59,7 +59,7 @@ test.skip('test4', async ({ page }) => {
     await expect(textWhatIsSeq).toBeVisible()
 })
 
-test('test50', async ({ page }) => {
+test('test5', async ({ page }) => {
     const input = page.locator('input.gsc-input')
     await page.getByText('Guru99 is totally new kind of learning experience. We make tons of efforts to ta').click();
     await page.locator('div.g-content').screenshot({ path: 'screenshots/screen1.png'})
