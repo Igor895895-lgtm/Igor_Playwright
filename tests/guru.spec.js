@@ -16,6 +16,8 @@ test.describe('Open Guru website', () => {
 
 test('test', async ({ page }) => {
   await page.goto('https://www.guru99.com/');
+  await page.mouse.down();
+  await page.mouse.up();
   await page.getByRole('link', { name: 'SAP Expand child menu of SAP' }).click();
   await page.getByRole('link', { name: 'CRM', exact: true }).click();
   await page.getByRole('button', { name: 'AGREE' }).click();
