@@ -63,7 +63,7 @@ test.skip('test4', async ({ page }) => {
 test('test50', async ({ page }) => {
     const input = page.locator('input.gsc-input')
     await page.getByText('Guru99 is totally new kind of learning experience. We make tons of efforts to ta').click();
-    await page.locator('div.g-content').screenshot({ path: 'screen3.png'})
+    await page.locator('div.g-content').screenshot({ path: 'screenshots/screen1.png'})
     await expect(page).toHaveScreenshot(path.resolve('screenshots-main-page-snapshot.png'));
     await input.click()
     await input.fill('sap')
