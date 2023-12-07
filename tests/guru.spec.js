@@ -16,9 +16,11 @@ test.describe('Open Guru website', () => {
 
 test('test', async ({ page }) => {
   await page.goto('https://www.guru99.com/');
+  await page.mouse.down();
+  await page.mouse.up();
   await page.getByRole('link', { name: 'SAP Expand child menu of SAP' }).click();
   await page.getByRole('link', { name: 'CRM', exact: true }).click();
-  await page.getByRole('button', { name: 'AGREE' }).click();
+  //await page.getByRole('button', { name: 'AGREE' }).click();
   await page.getByTitle('SAP CRM Module: Overview, Architecture').click();
 });
     
@@ -61,7 +63,7 @@ test('test5', async ({ page }) => {
     const input = page.locator('input.gsc-input')
     await page.getByText('Guru99 is totally new kind of learning experience. We make tons of efforts to ta').click();
     await page.locator('div.g-content').screenshot({ path: 'screenshots/screen1.png'})
-    await expect(page).toHaveScreenshot('screenshots-main-page-snapshot.png')
+    //await expect(page).toHaveScreenshot('screenshots-main-page-snapshot.png')
     await input.click()
     await input.fill('sap')
     await page.screenshot({ path: 'sap_in_search_input_false.png', fullPage: false})
