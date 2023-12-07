@@ -1,7 +1,7 @@
-name: e2e tests on playwright
+name: CI API TESTS
 on:
   push:
-    branches: ['rest']
+    branches: ['Rest']
 jobs:
   tests: 
     runs-on: ubuntu-latest
